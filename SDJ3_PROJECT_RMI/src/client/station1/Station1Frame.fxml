@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.station1.S1Controller">
+   <children>
+      <MenuBar layoutY="1.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToStation1" text="Station 1" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToStation2" text="Station 2" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToStation3" text="Station 3" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToSearchCarService" text="Search Car" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Label ellipsisString="" layoutX="193.0" layoutY="36.0" text="Station 1" textAlignment="CENTER" textOverrun="CLIP" underline="true">
+         <font>
+            <Font name="Agency FB Bold" size="40.0" />
+         </font>
+      </Label>
+      <TextField fx:id="carVin" layoutX="127.0" layoutY="113.0" prefHeight="36.0" prefWidth="246.0" promptText="Car VIN" />
+      <TextField fx:id="carModel" layoutX="127.0" layoutY="190.0" prefHeight="36.0" prefWidth="246.0" promptText="Model" />
+      <TextField fx:id="carBrand" layoutX="127.0" layoutY="264.0" prefHeight="36.0" prefWidth="246.0" promptText="Brand" />
+      <TextField fx:id="carWeight" layoutX="127.0" layoutY="333.0" prefHeight="36.0" prefWidth="246.0" promptText="Weight" />
+      <Button layoutX="127.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="36.0" prefWidth="246.0" text="Register" />
+   </children>
+</AnchorPane>
