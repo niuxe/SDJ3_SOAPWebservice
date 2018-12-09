@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SDJ3_SOAPWebservice">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="SDJ3_SOAPWebservice"/>
+        <property name="java-output-path" value="/SDJ3_SOAPWebservice/build/classes"/>
+    </wb-module>
+</project-modules>
