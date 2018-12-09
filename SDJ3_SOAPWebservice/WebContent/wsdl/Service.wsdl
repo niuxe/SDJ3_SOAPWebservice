@@ -65,7 +65,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="searchCarResponse">
     <complexType>
      <sequence>
-      <element name="searchCarReturn" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="searchCarReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Car;
 import model.Part;
@@ -264,4 +265,42 @@ public class DbHandler {
 			closeConnection();
 		}
 	}
+	
+	public ArrayList<String> getAllPartsInfo(String vin)
+	{
+		try {
+			openConnection();
+			String sql = "SELECT * FROM Part" +
+			" WHERE VIN = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			ps.setString(1,vin);
+			ResultSet r = ps.executeQuery();
+			ArrayList<String> s = new ArrayList<String>();
+			
+			
+			while(r.next())
+			{
+				String l = "Part name: " + r.getString("Part_name");
+				l += ", type: " + r.getString("Type");
+				l += ", pallet id: " + r.getInt("Pallet_id");
+				l += ", product id: " + r.getInt("Product_id");
+				s.add(l);
+			}
+			
+			
+			
+			return s;
+		} catch (SQLException e) {
+			if (e.getErrorCode() == 23505) {
+				return null;
+			} else {
+				e.printStackTrace();
+				return null;
+			}
+		} finally {
+			closeConnection();
+		}
+	}
+
 }

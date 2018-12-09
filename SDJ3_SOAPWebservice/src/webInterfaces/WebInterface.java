@@ -22,5 +22,5 @@ public interface WebInterface {
 	boolean insertProductPart(int productID, int partID);
 	
 	@WebMethod
-	String searchCar(String vin);
+	String[] searchCar(String vin);
 }
