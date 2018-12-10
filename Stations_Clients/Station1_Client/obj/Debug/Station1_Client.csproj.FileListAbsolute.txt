@@ -1,0 +1,10 @@
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\bin\Debug\Station1_Client.exe.config
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\bin\Debug\Station1_Client.exe
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\bin\Debug\Station1_Client.pdb
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.csprojAssemblyReference.cache
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.Form1.resources
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.Properties.Resources.resources
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.csproj.GenerateResource.cache
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.csproj.CoreCompileInputs.cache
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.exe
+C:\Users\gianfrancobardi\Documents\SDJ-3\Station1_Client\Station1_Client\obj\Debug\Station1_Client.pdb

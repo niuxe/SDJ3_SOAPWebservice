@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://service" targetNamespace="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://service">
+      <xsd:element name="searchCar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="vin" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="searchCarResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="searchCarReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stationTwoRegister">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="partName" type="xsd:string" />
+            <xsd:element name="partType" type="xsd:string" />
+            <xsd:element name="weight" type="xsd:double" />
+            <xsd:element name="vin" type="xsd:string" />
+            <xsd:element name="palletID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stationTwoRegisterResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="stationTwoRegisterReturn" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stationOneRegister">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="vin" type="xsd:string" />
+            <xsd:element name="model" type="xsd:string" />
+            <xsd:element name="brand" type="xsd:string" />
+            <xsd:element name="car_weight" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stationOneRegisterResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="stationOneRegisterReturn" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="productRegistration">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productName" type="xsd:string" />
+            <xsd:element name="type" type="xsd:string" />
+            <xsd:element name="destination" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="productRegistrationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productRegistrationReturn" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertProductPart">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productID" type="xsd:int" />
+            <xsd:element name="partID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertProductPartResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="insertProductPartReturn" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="insertProductPartRequest">
+    <wsdl:part name="parameters" element="impl:insertProductPart" />
+  </wsdl:message>
+  <wsdl:message name="insertProductPartResponse">
+    <wsdl:part name="parameters" element="impl:insertProductPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationTwoRegisterResponse">
+    <wsdl:part name="parameters" element="impl:stationTwoRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationOneRegisterResponse">
+    <wsdl:part name="parameters" element="impl:stationOneRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="productRegistrationRequest">
+    <wsdl:part name="parameters" element="impl:productRegistration" />
+  </wsdl:message>
+  <wsdl:message name="searchCarResponse">
+    <wsdl:part name="parameters" element="impl:searchCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="stationTwoRegisterRequest">
+    <wsdl:part name="parameters" element="impl:stationTwoRegister" />
+  </wsdl:message>
+  <wsdl:message name="stationOneRegisterRequest">
+    <wsdl:part name="parameters" element="impl:stationOneRegister" />
+  </wsdl:message>
+  <wsdl:message name="searchCarRequest">
+    <wsdl:part name="parameters" element="impl:searchCar" />
+  </wsdl:message>
+  <wsdl:message name="productRegistrationResponse">
+    <wsdl:part name="parameters" element="impl:productRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service">
+    <wsdl:operation name="searchCar">
+      <wsdl:input name="searchCarRequest" message="impl:searchCarRequest" />
+      <wsdl:output name="searchCarResponse" message="impl:searchCarResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="stationTwoRegister">
+      <wsdl:input name="stationTwoRegisterRequest" message="impl:stationTwoRegisterRequest" />
+      <wsdl:output name="stationTwoRegisterResponse" message="impl:stationTwoRegisterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="stationOneRegister">
+      <wsdl:input name="stationOneRegisterRequest" message="impl:stationOneRegisterRequest" />
+      <wsdl:output name="stationOneRegisterResponse" message="impl:stationOneRegisterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="productRegistration">
+      <wsdl:input name="productRegistrationRequest" message="impl:productRegistrationRequest" />
+      <wsdl:output name="productRegistrationResponse" message="impl:productRegistrationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="insertProductPart">
+      <wsdl:input name="insertProductPartRequest" message="impl:insertProductPartRequest" />
+      <wsdl:output name="insertProductPartResponse" message="impl:insertProductPartResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoapBinding" type="impl:Service">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="searchCar">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="searchCarRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="searchCarResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationTwoRegister">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="stationTwoRegisterRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="stationTwoRegisterResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stationOneRegister">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="stationOneRegisterRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="stationOneRegisterResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="productRegistration">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="productRegistrationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="productRegistrationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertProductPart">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="insertProductPartRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertProductPartResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceService">
+    <wsdl:port name="Service" binding="impl:ServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/SDJ3_SOAPWebservice/services/Service" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
